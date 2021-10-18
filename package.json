@@ -2,7 +2,7 @@
    "name": "typeorm_project",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
-   "main": "dist/index.js",
+   "main": "dist/src/app.js",
    "keywords": [],
    "author": "",
    "license": "ISC",
@@ -15,19 +15,20 @@
       "nodemon": "^2.0.13",
       "pm2": "^5.1.2",
       "ts-node": "3.3.0",
+      "typeorm": "^0.2.38",
       "typescript": "^4.4.4"
    },
    "dependencies": {
       "concurrently": "^6.3.0",
       "dotenv": "^10.0.0",
       "express": "^4.17.1",
+      "mysql2": "^2.3.2",
       "pg": "^8.7.1",
-      "reflect-metadata": "^0.1.10",
-      "typeorm": "0.2.38"
+      "reflect-metadata": "^0.1.10"
    },
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "concurrently \"tsc -w\" \"nodemon dist/src/index.js\"",
-      "start": "cross-env NODE_ENV=production pm2 start dist/src/index.js -i 0"
+      "dev": "concurrently \"tsc -w\" \"nodemon dist/src/app.js\"",
+      "start": "cross-env NODE_ENV=production pm2 start dist/src/app.js"
    }
 }

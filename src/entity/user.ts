@@ -1,19 +1,19 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-
-@Entity()
-export class User {
+// 내부의 특별한 쿼리를 쓰려면 class 안에 static으로 명시해주기 
+@Entity()   
+export class User extends BaseEntity{
 
     @PrimaryGeneratedColumn()
-    id!: number;
+    id: number;
 
     @Column()
-    firstName!: string;
+    firstName: string;
 
     @Column()
-    lastName!: string;
+    lastName: string;
 
     @Column()
-    age!: number;
+    age: number;
 
 }

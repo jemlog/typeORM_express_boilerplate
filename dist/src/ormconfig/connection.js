@@ -12,21 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_1 = require("./entity/user");
-require("reflect-metadata");
 const typeorm_1 = require("typeorm");
-const express_1 = __importDefault(require("express"));
-const ormconfig_1 = __importDefault(require("./ormconfig"));
-(0, typeorm_1.createConnection)(ormconfig_1.default).then((connection) => __awaiter(void 0, void 0, void 0, function* () {
-    const app = (0, express_1.default)();
-    app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const user = new user_1.User();
-        user.age = 25;
-        user.firstName = 'jemin';
-        user.lastName = 'seo';
-        const user1 = yield connection.getRepository(user_1.User).save(user);
-        res.json(user1);
-    }));
-    app.listen(8002, () => { console.log('server start!!'); });
-})).catch(error => console.log(error));
-//# sourceMappingURL=index.js.map
+const process_1 = __importDefault(require("process"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const initConn = () => __awaiter(void 0, void 0, void 0, function* () {
+    const connectionOptions = yield (0, typeorm_1.getConnectionOptions)(process_1.default.env.NODE_ENV);
+    (0, typeorm_1.createConnection)(Object.assign(Object.assign({}, connectionOptions), { name: "default" }));
+});
+exports.default = initConn;
+//# sourceMappingURL=connection.js.map
