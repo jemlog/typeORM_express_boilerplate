@@ -1,16 +1,14 @@
-import {Router} from 'express'
-import * as userController from '../controller/user'
+import { Router } from 'express';
+import * as userController from '../controller/user';
 
-const router = Router()
+const router = Router();
 
-router.get('/',userController.getAllUsers)
+router.get('/', userController.getAllUsers);
 
-router.post('/',userController.createUser)
+router.post('/', userController.createUser);
 
-router.put('/:id')
+router.put('/:id');
 
-router.delete('/:id')
-
-
+router.delete('/:id');
 
 export default router;

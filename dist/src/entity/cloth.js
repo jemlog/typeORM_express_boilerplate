@@ -9,29 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
+exports.Cloth = void 0;
 const typeorm_1 = require("typeorm");
 // 내부의 특별한 쿼리를 쓰려면 class 안에 static으로 명시해주기
-let User = class User extends typeorm_1.BaseEntity {
+let Cloth = class Cloth extends typeorm_1.BaseEntity {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], Cloth.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], User.prototype, "firstName", void 0);
+], Cloth.prototype, "top_bottom", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], User.prototype, "lastName", void 0);
+], Cloth.prototype, "short_long", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], User.prototype, "age", void 0);
-User = __decorate([
+    __metadata("design:type", String)
+], Cloth.prototype, "color", void 0);
+Cloth = __decorate([
     (0, typeorm_1.Entity)()
-], User);
-exports.User = User;
-//# sourceMappingURL=user.js.map
+], Cloth);
+exports.Cloth = Cloth;
+//# sourceMappingURL=cloth.js.map
